@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/mymovies/:id', to: 'users#my_movies'
+  get 'myfriendsmovies/:id', to: 'users#my_friends_movies'
   post 'api/v1/signin', to: 'api/v1/users#signin'
   post 'api/v1/register', to: 'api/v1/users#register'
   get 'api/v1/validate', to: 'api/v1/users#validate'
