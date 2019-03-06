@@ -25,14 +25,14 @@ class Api::V1::UsersController < ApplicationController
 
     def validate
         @user = get_current_user
-        if @user && @user.authenticate(params[:password])
+        if @user 
             render json: {username: @user.username, token: issue_token({id: @user.id})}
         else
             render json: {error: "username/password combination invalid"}, status: 401
         end
     end
     
-    def collection
+    def get_collection
         @user = get_current_user
         if @user
             render json: @user.movies
