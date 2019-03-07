@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :friendships
   resources :usermovies
   resources :movies
+  resources :users 
   
   namespace :api do
     namespace :v1 do
